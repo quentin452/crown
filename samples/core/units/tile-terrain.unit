@@ -1,0 +1,60 @@
+_guid = "0b109f0c-adc0-49d8-9fc6-d96cd48fd606"
+_type = "unit"
+components = [
+	{
+		_guid = "238ae946-75d4-4c4e-b326-ff4c6562fba4"
+		_type = "transform"
+		data = {
+			position = [
+				0
+				0
+				0
+			]
+			rotation = [
+				0
+				0
+				0
+				1
+			]
+			scale = [
+				1
+				1
+				1
+			]
+		}
+		type = "transform"
+	}
+	{
+		_guid = "9217e10e-9b45-46d0-9c02-7c95531f4e80"
+		_type = "collider"
+		data = {
+			material = "default"
+			name = "Tile-Terain"
+			scene = "core/units/tile-terrain"
+			shape = "convex_hull"
+		}
+		type = "collider"
+	}
+	{
+		_guid = "add86f5b-267a-4aa8-954c-385d2fcda2be"
+		_type = "mesh_renderer"
+		data = {
+			geometry_name = "Tile-Terain"
+			material = "core/units/tile-terrain"
+			mesh_resource = "core/units/tile-terrain"
+			visible = true
+		}
+		type = "mesh_renderer"
+	}
+	{
+		_guid = "b5f0e7bd-e78b-4447-acd3-37ca73020177"
+		_type = "actor"
+		data = {
+			class = "static"
+			collision_filter = "default"
+			mass = 1
+			material = "default"
+		}
+		type = "actor"
+	}
+]

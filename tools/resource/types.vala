@@ -9,6 +9,7 @@ const string OBJECT_TYPE_ACTOR                   = "actor";
 const string OBJECT_TYPE_ANIMATION_STATE_MACHINE = "animation_state_machine";
 const string OBJECT_TYPE_CAMERA                  = "camera";
 const string OBJECT_TYPE_COLLIDER                = "collider";
+const string OBJECT_TYPE_TILE_TERRAIN            = "Tile Terrain";
 const string OBJECT_TYPE_FILE                    = "file";
 const string OBJECT_TYPE_LEVEL                   = "level";
 const string OBJECT_TYPE_LIGHT                   = "light";

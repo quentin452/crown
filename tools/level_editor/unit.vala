@@ -366,6 +366,8 @@ public struct Unit
 			_db.set_property_string(component_id, "data.material", "default");
 		} else if (component_type == OBJECT_TYPE_ANIMATION_STATE_MACHINE) {
 			_db.set_property_string(component_id, "data.state_machine_resource", "core/components/noop");
+		} else if (component_type == OBJECT_TYPE_TILE_TERRAIN) {
+			// TODO
 		} else {
 			logw("Unregistered component type `%s`".printf(component_type));
 		}
@@ -538,6 +540,8 @@ public struct Unit
 					 *  , unit.get_component_property_string(component_id, "data.state_machine_resource")
 					 *  ));
 					 */
+				} else if (component_type == OBJECT_TYPE_TILE_TERRAIN) {
+					// TODO
 				} else {
 					logw("Unregistered component type `%s`".printf(component_type));
 				}
@@ -721,6 +725,8 @@ public struct Unit
 					/* No sync. */
 				} else if (component_type == OBJECT_TYPE_ANIMATION_STATE_MACHINE) {
 					/* No sync. */
+				} else if (component_type == OBJECT_TYPE_TILE_TERRAIN) {
+					// TODO
 				} else {
 					logw("Unregistered component type `%s`".printf(component_type));
 				}
@@ -759,6 +765,7 @@ public struct Unit
 			|| type == OBJECT_TYPE_LIGHT
 			|| type == OBJECT_TYPE_SCRIPT
 			|| type == OBJECT_TYPE_COLLIDER
+			|| type == OBJECT_TYPE_TILE_TERRAIN
 			|| type == OBJECT_TYPE_ACTOR
 			|| type == OBJECT_TYPE_ANIMATION_STATE_MACHINE
 			;

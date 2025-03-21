@@ -496,18 +496,19 @@ public class LevelEditorApplication : Gtk.Application
 	};
 
 	private const GLib.ActionEntry[] action_entries_create =
-	{
-		{ "menu-create",        null,               null, null },
-		{ "menu-primitives",    null,               null, null },
-		{ "primitive-cube",     on_spawn_primitive, null, null },
-		{ "primitive-sphere",   on_spawn_primitive, null, null },
-		{ "primitive-cone",     on_spawn_primitive, null, null },
-		{ "primitive-cylinder", on_spawn_primitive, null, null },
-		{ "primitive-plane",    on_spawn_primitive, null, null },
-		{ "camera",             on_spawn_primitive, null, null },
-		{ "light",              on_spawn_primitive, null, null },
-		{ "sound-source",       on_spawn_primitive, null, null },
-		{ "unit-empty",         on_spawn_unit,      null, null }
+	{ 
+		{ "menu-create",        null,               	null, null },
+		{ "menu-primitives",    null,               	null, null },
+		{ "primitive-cube",     on_spawn_primitive, 	null, null },
+		{ "primitive-sphere",   on_spawn_primitive, 	null, null },
+		{ "primitive-cone",     on_spawn_primitive, 	null, null },
+		{ "primitive-cylinder", on_spawn_primitive, 	null, null },
+		{ "primitive-plane",    on_spawn_primitive, 	null, null },
+		{ "terrain",    		on_spawn_tile_terrain,  null, null },
+		{ "camera",             on_spawn_primitive, 	null, null },
+		{ "light",              on_spawn_primitive, 	null, null },
+		{ "sound-source",       on_spawn_primitive, 	null, null },
+		{ "unit-empty",         on_spawn_unit,      	null, null }
 	};
 
 	private const GLib.ActionEntry[] action_entries_camera =
@@ -870,6 +871,7 @@ public class LevelEditorApplication : Gtk.Application
 		Unit.register_component_type(OBJECT_TYPE_MESH_RENDERER,           OBJECT_TYPE_TRANSFORM);
 		Unit.register_component_type(OBJECT_TYPE_SPRITE_RENDERER,         OBJECT_TYPE_TRANSFORM);
 		Unit.register_component_type(OBJECT_TYPE_COLLIDER,                OBJECT_TYPE_TRANSFORM);
+		Unit.register_component_type(OBJECT_TYPE_TILE_TERRAIN,            OBJECT_TYPE_TRANSFORM);
 		Unit.register_component_type(OBJECT_TYPE_ACTOR,                   OBJECT_TYPE_TRANSFORM);
 		Unit.register_component_type(OBJECT_TYPE_SCRIPT,                  "");
 		Unit.register_component_type(OBJECT_TYPE_ANIMATION_STATE_MACHINE, "");
@@ -2680,7 +2682,12 @@ public class LevelEditorApplication : Gtk.Application
 
 		activate_action("set-placeable", new GLib.Variant.tuple(paramz));
 	}
-
+	private void on_spawn_tile_terrain(GLib.SimpleAction action, GLib.Variant? param)
+	{
+		GLib.Variant[] paramz;
+			paramz = { "unit", "core/units/tile-terrain" };
+		activate_action("set-placeable", new GLib.Variant.tuple(paramz));
+	}
 	private void on_spawn_unit(GLib.SimpleAction action, GLib.Variant? param)
 	{
 		_level.spawn_empty_unit();

@@ -277,6 +277,10 @@
       </submenu>
       <section>
         <item>
+          <attribute name="label" translatable="yes">Tile Terrain</attribute>
+          <attribute name="action">app.terrain</attribute>
+        </item>
+        <item>
           <attribute name="label" translatable="yes">Camera</attribute>
           <attribute name="action">app.camera</attribute>
         </item>
